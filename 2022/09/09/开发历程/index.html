@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0">
-        <title>Tags: Future | Cjh &amp; Jqyの小窝</title>
+        <title>浅浅记录一下开发历程 | Cjh &amp; Jqyの小窝</title>
         <meta name="author" content="Deeeeex">
         <meta name="description" content="">
         <meta name="keywords" content="">
@@ -119,73 +119,80 @@
 </nav>
                     </div>
                     <div id="main">
-                         
-<div class="categories-tags">
-    
-    <div class="all-s">
-        
-        
-        <span>
-            <a href="/tags/daily/" style="background: #03a9f4">
-                <span class="icon">
-                    <svg class="fa-icon"><use xlink:href="#tags-solid"></use></svg>
-                </span>
-                daily
-            </a>
-        </span>
-        
-        
-        <span>
-            <a href="/tags/Tutorials/" style="background: #ffa2c4">
-                <span class="icon">
-                    <svg class="fa-icon"><use xlink:href="#tags-solid"></use></svg>
-                </span>
-                Tutorials
-            </a>
-        </span>
-        
-        
-        <span>
-            <a href="/tags/future/" style="background: linear-gradient(120deg, #9abbf7 0%, #ffbbf4 100%)">
-                <span class="icon">
-                    <svg class="fa-icon"><use xlink:href="#tags-solid"></use></svg>
-                </span>
-                future
-            </a>
-        </span>
-        
+                        
+<div class="article">
+    <div>
+        <h1>浅浅记录一下开发历程 </h1>
     </div>
-    <div id="archives">
+    <div class="info">
+        <span class="date">
+            <span class="icon">
+                <svg class="fa-icon"><use xlink:href="#calendar-solid"></use></svg>
+            </span>
+            2022/9/9
+        </span>
         
-        <div class="timeline">
-            <div class="timeline-tail"></div>
-            <div class="timeline-content">
-                <div class="item-time">2022/9/8</div>
-                <a href="/2022/09/08/未来with江老师/">
-                    <h3>未来With江老师</h3>
+        
+        <span class="tags">
+            <span class="icon">
+                <svg class="fa-icon"><use xlink:href="#tags-solid"></use></svg>
+            </span>
+            
+            <span class="tag">
+                
+                <a href="/tags/Tutorials/" style="color: #00bcd4">
+                    Tutorials
                 </a>
-                <div class="info">
-                    
-                    
-                    <span class="tags">
-                        <span class="icon">
-                            <svg class="fa-icon"><use xlink:href="#tags-solid"></use></svg>
-                        </span>
-                        
-                        <span class="tag">
-                            
-                            <a href="/tags/future/" style="color: #03a9f4">
-                                future
-                            </a>
-                        </span>
-                        
-                    </span>
-                    
-                </div>
-            </div>
-        </div>
+            </span>
+            
+        </span>
         
     </div>
+    <div class="content" v-pre>
+        <p>最开始是想记录一下纪念日，后来想把“已经在一起xx天”放在电脑壁纸上，但发现我也没法让江老师和我同时看到这个东西，索性做个网页，把值得记录的生活点滴放在这里，遂取名<code>cjh &amp; jqyの小窝</code>（什么三语怪名🤣）</p>
+<span id="more"></span>
+
+<p>之前看过一位好友的博客用<code>Hexo</code>搭建，可以套用一些主题+DIY自己想做的东西，我这里选择的主题是<a target="_blank" rel="noopener" href="https://github.com/argvchs/hexo-theme-particlex">Hexo-Theme-ParticleX</a></p>
+<h4 id="主题与首页"><a href="#主题与首页" class="headerlink" title="主题与首页"></a>主题与首页</h4><p>至于主题使用方式也很简单，把个人信息什么的填写进去，首页倒计时的实现方式是用<code>timer</code>减去<code>theme.date.start</code>（这里的<code>theme.date.start</code>写的是<code>&quot;2022/08/31 00:58:09&quot;</code>，时间点非常严谨就是说）</p>
+<pre><code class="js">&lt;!--计时器js--&gt;
+      &lt;script&gt;
+        function timer() &#123;
+        window.setTimeout(&quot;timer()&quot;, 1000);
+        var start = new Date(&quot;&lt;%= theme.date.start %&gt;&quot;);
+        var t = new Date().getTime() - start;
+        var h = ~~(t / 1000 / 60 / 60 % 24);
+        if (h &lt; 10) &#123;h = &quot;0&quot; + h;&#125;
+        var m = ~~(t / 1000 / 60 % 60);
+        if (m &lt; 10) &#123; m = &quot;0&quot; + m;&#125;
+        var s = ~~(t / 1000 % 60);
+       if (s &lt; 10) &#123;s = &quot;0&quot; + s;&#125;
+        document.getElementById(&#39;d&#39;).innerHTML = ~~(t / 1000 / 60 / 60 / 24);
+       document.getElementById(&#39;h&#39;).innerHTML = h;
+       document.getElementById(&#39;m&#39;).innerHTML = m;
+       document.getElementById(&#39;s&#39;).innerHTML = s;&#125;
+        timer();
+      &lt;/script&gt; 
+&lt;!--END：计时器js--&gt;
+</code></pre>
+<h4 id="卡片"><a href="#卡片" class="headerlink" title="卡片"></a>卡片</h4><p>侧边的卡片本来是个人介绍页，强行将其改为两张图片，顺便把右边的<code>gif</code>水平翻转过来和左边的<code>gif</code>保持一下和谐🤩</p>
+<h4 id="鼠标及背景特效"><a href="#鼠标及背景特效" class="headerlink" title="鼠标及背景特效"></a>鼠标及背景特效</h4><p>鼠标的特效可以去仓库自取<a target="_blank" rel="noopener" href="https://github.com/diaryofus/diaryofus.github.io">diaryofus&#x2F;diaryofus.github.io</a></p>
+<h4 id="图片排版"><a href="#图片排版" class="headerlink" title="图片排版"></a>图片排版</h4><p>考虑到后面发照片可能会凑九宫格，所以<code>Hexo</code>的图片排版貌似就成了个大问题，看了一些网上的解决方案，最终还是选择放在表格里，效果见下图</p>
+<table><tr>
+<td><img src="/images/profile_1.jpg" width="200" border="0/"></td>
+<td><img src="/images/profile_2.jpg" width="200" border="0/"></td>
+<td><img src="/images/彩虹1.jpg" width="200" border="0/"></td>
+</tr></table> 
+
+<h4 id="国内访问加速"><a href="#国内访问加速" class="headerlink" title="国内访问加速"></a>国内访问加速</h4><p>由于开始时部署在<code>Github Pages</code>上</p>
+<p>最开始尝试的是<code>Vercel</code></p>
+<p><a target="_blank" rel="noopener" href="https://diary-diaryofus.vercel.app/">https://diary-diaryofus.vercel.app/</a></p>
+<p><a target="_blank" rel="noopener" href="https://diary-jet.vercel.app/">https://diary-jet.vercel.app/</a></p>
+<p>后来发现这个是直接被墙掉了</p>
+<p>替换成<code>Netlify</code>成功解决国内访问太慢的问题</p>
+<p><a target="_blank" rel="noopener" href="https://diaryofus.netlify.app/">https://diaryofus.netlify.app/</a></p>
+
+    </div>
+    
 </div>
                          
 <footer id="footer">
