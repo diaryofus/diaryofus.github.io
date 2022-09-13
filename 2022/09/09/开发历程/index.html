@@ -151,10 +151,10 @@
     <div class="content" v-pre>
         <p>最开始是想记录一下纪念日，后来想把“已经在一起xx天”放在电脑壁纸上，但发现我也没法让江老师和我同时看到这个东西，索性做个网页，把值得记录的生活点滴放在这里，遂取名<code>cjh &amp; jqyの小窝</code>（什么三语怪名🤣）</p>
 <span id="more"></span>
-
 <p>之前看过一位<a target="_blank" rel="noopener" href="http://home.ustc.edu.cn/~admindeng/">好友</a>的博客用<code>Hexo</code>搭建，可以套用一些主题+DIY自己想做的东西，虽然是静态网站但是展示效果挺好。我这里选择的主题是<a target="_blank" rel="noopener" href="https://github.com/argvchs/hexo-theme-particlex">Hexo-Theme-ParticleX</a></p>
-<h3 id="主题与首页"><a href="#主题与首页" class="headerlink" title="主题与首页"></a>主题与首页</h3><p>至于主题使用方式也很简单，把个人信息什么的填写进去，首页倒计时的实现方式是用<code>timer</code>减去<code>theme.date.start</code>（这里的<code>theme.date.start</code>写的是<code>&quot;2022/08/31 00:58:09&quot;</code>，时间点非常严谨就是说）</p>
-<pre><code class="js">&lt;!--计时器js--&gt;
+<h3 id="主题与首页">主题与首页</h3>
+<p>至于主题使用方式也很简单，把个人信息什么的填写进去，首页倒计时的实现方式是用<code>timer</code>减去<code>theme.date.start</code>（这里的<code>theme.date.start</code>写的是<code>&quot;2022/08/31 00:58:09&quot;</code>，时间点非常严谨就是说）</p>
+<pre><code class="language-js">&lt;!--计时器js--&gt;
       &lt;script&gt;
         function timer() &#123;
         window.setTimeout(&quot;timer()&quot;, 1000);
@@ -166,31 +166,35 @@
         if (m &lt; 10) &#123; m = &quot;0&quot; + m;&#125;
         var s = ~~(t / 1000 % 60);
        if (s &lt; 10) &#123;s = &quot;0&quot; + s;&#125;
-        document.getElementById(&#39;d&#39;).innerHTML = ~~(t / 1000 / 60 / 60 / 24);
-       document.getElementById(&#39;h&#39;).innerHTML = h;
-       document.getElementById(&#39;m&#39;).innerHTML = m;
-       document.getElementById(&#39;s&#39;).innerHTML = s;&#125;
+        document.getElementById('d').innerHTML = ~~(t / 1000 / 60 / 60 / 24);
+       document.getElementById('h').innerHTML = h;
+       document.getElementById('m').innerHTML = m;
+       document.getElementById('s').innerHTML = s;&#125;
         timer();
       &lt;/script&gt; 
 &lt;!--END：计时器js--&gt;
 </code></pre>
-<h3 id="卡片"><a href="#卡片" class="headerlink" title="卡片"></a>卡片</h3><p>侧边的卡片本来是个人介绍页，强行将其改为两张图片，顺便把右边的<code>gif</code>水平翻转过来和左边的<code>gif</code>保持一下和谐🤩</p>
-<h3 id="鼠标及背景特效"><a href="#鼠标及背景特效" class="headerlink" title="鼠标及背景特效"></a>鼠标及背景特效</h3><p>鼠标的特效可以去仓库自取<a target="_blank" rel="noopener" href="https://github.com/diaryofus/diaryofus.github.io">diaryofus&#x2F;diaryofus.github.io</a></p>
-<h3 id="图片排版"><a href="#图片排版" class="headerlink" title="图片排版"></a>图片排版</h3><p>考虑到后面发照片可能会凑九宫格，所以<code>Hexo</code>的图片排版貌似就成了个大问题，看了一些网上的解决方案，最终还是选择放在表格里，效果见下图</p>
+<h3 id="卡片">卡片</h3>
+<p>侧边的卡片本来是个人介绍页，强行将其改为两张图片，顺便把右边的<code>gif</code>水平翻转过来和左边的<code>gif</code>保持一下和谐🤩</p>
+<h3 id="鼠标及背景特效">鼠标及背景特效</h3>
+<p>鼠标的特效可以去仓库自取<a target="_blank" rel="noopener" href="https://github.com/diaryofus/diaryofus.github.io">diaryofus/diaryofus.github.io</a></p>
+<h3 id="图片排版">图片排版</h3>
+<p>考虑到后面发照片可能会凑九宫格，所以<code>Hexo</code>的图片排版貌似就成了个大问题，看了一些网上的解决方案，最终还是选择放在表格里，效果见下图</p>
 <table><tr>
 <td><img src="/images/profile_1.jpg" width="200" border="0/"></td>
 <td><img src="/images/profile_2.jpg" width="200" border="0/"></td>
 <td><img src="/images/彩虹1.jpg" width="200" border="0/"></td>
 </tr></table> 
-
-<h3 id="国内访问加速"><a href="#国内访问加速" class="headerlink" title="国内访问加速"></a>国内访问加速</h3><p>由于开始时部署在<code>Github Pages</code>上，不开梯子访问真的究极慢</p>
+<h3 id="国内访问加速">国内访问加速</h3>
+<p>由于开始时部署在<code>Github Pages</code>上，不开梯子访问真的究极慢</p>
 <p>最开始尝试的是<code>Vercel</code></p>
 <p><a target="_blank" rel="noopener" href="https://diary-diaryofus.vercel.app/">https://diary-diaryofus.vercel.app/</a></p>
 <p><a target="_blank" rel="noopener" href="https://diary-jet.vercel.app/">https://diary-jet.vercel.app/</a></p>
 <p>后来发现这个是直接被墙掉了</p>
 <p>替换成<code>Netlify</code>成功解决国内访问太慢的问题</p>
 <p><a target="_blank" rel="noopener" href="https://diaryofus.netlify.app/">https://diaryofus.netlify.app/</a></p>
-<h3 id="结语"><a href="#结语" class="headerlink" title="结语"></a>结语</h3><p>原定中秋完成作为在一起10天以及中秋的小礼物</p>
+<h3 id="结语">结语</h3>
+<p>原定中秋完成作为在一起10天以及中秋的小礼物</p>
 <p>9月9日正好完工（日子选的还不错🥰），很好，很有精神！</p>
 
     </div>

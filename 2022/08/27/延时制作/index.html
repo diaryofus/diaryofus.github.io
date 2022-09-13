@@ -140,7 +140,7 @@
             
             <span class="tag">
                 
-                <a href="/tags/Tutorials/" style="color: #ff7d73">
+                <a href="/tags/Tutorials/" style="color: #03a9f4">
                     Tutorials
                 </a>
             </span>
@@ -149,31 +149,37 @@
         
     </div>
     <div class="content" v-pre>
-        <h1 id="延时制作流程"><a href="#延时制作流程" class="headerlink" title="延时制作流程"></a>延时制作流程</h1><p><strong>导卡</strong>：把<code>SD</code>卡里的<code>RAW</code>格式照片导入本地的一个文件夹（不直接从卡里制作的原因是本地磁盘读取速度更快），叫做<code>a</code></p>
+        <h1>延时制作流程</h1>
+<p><strong>导卡</strong>：把<code>SD</code>卡里的<code>RAW</code>格式照片导入本地的一个文件夹（不直接从卡里制作的原因是本地磁盘读取速度更快），叫做<code>a</code></p>
 <p><strong><code>Lr</code>修图</strong>：将<code>a</code>中的图片导入<code>Lr</code>并选择一张对它进行影调上的处理，然后应用到全部（当然你也可以根据具体情况的不同选择多张具有代表性的分别修）</p>
 <p><strong>批量导出</strong>：这里记得选择导出的质量100%，格式为<code>JPEG</code>，导出的文件夹叫做<code>b</code></p>
 <span id="more"></span>
-
 <p><img src="/images/1.png" alt="1"></p>
 <p><strong><code>Pr</code>处理</strong>：</p>
 <ol>
-<li><p>点击“文件-新建项目”</p>
+<li>
+<p>点击“文件-新建项目”</p>
 </li>
-<li><p>点击“文件-新建序列”</p>
+<li>
+<p>点击“文件-新建序列”</p>
 <p>新建序列这里随便先选一个序列预设，选择完点击设置，在这里把编辑	模式改成随便一个4K，时基改为25帧，可参考下图</p>
 </li>
 </ol>
 <p><img src="/images/2.png" alt="2"></p>
 <ol start="3">
-<li><p>点击文件-导入</p>
+<li>
+<p>点击文件-导入</p>
 <p>选择<code>b</code>中的第一张图片，然后勾选上“图像序列”，点击导入</p>
 </li>
-<li><p>拖动资源列表的<code>xxx.jpg</code>到<code>V1</code>滑轨上，预览即可看到视频</p>
+<li>
+<p>拖动资源列表的<code>xxx.jpg</code>到<code>V1</code>滑轨上，预览即可看到视频</p>
 </li>
-<li><p>这时可以导入音频，然后拖动该音频至<code>A1</code>滑轨作为<code>bgm</code></p>
+<li>
+<p>这时可以导入音频，然后拖动该音频至<code>A1</code>滑轨作为<code>bgm</code></p>
 </li>
-<li><p>导出-媒体</p>
-<p>格式：“H264” </p>
+<li>
+<p>导出-媒体</p>
+<p>格式：“H264”</p>
 <p>预设：“匹配源-高比特率”</p>
 <p>点击“导出”</p>
 </li>
