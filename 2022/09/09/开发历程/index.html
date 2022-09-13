@@ -140,7 +140,7 @@
             
             <span class="tag">
                 
-                <a href="/tags/Tutorials/" style="color: #00bcd4">
+                <a href="/tags/Tutorials/" style="color: #ff7d73">
                     Tutorials
                 </a>
             </span>
@@ -193,6 +193,50 @@
 <p>后来发现这个是直接被墙掉了</p>
 <p>替换成<code>Netlify</code>成功解决国内访问太慢的问题</p>
 <p><a target="_blank" rel="noopener" href="https://diaryofus.netlify.app/">https://diaryofus.netlify.app/</a></p>
+<h3 id="Markdown渲染问题">Markdown渲染问题</h3>
+<p>感动哭了，因为之前提过一嘴或许江老师也可以为我们的网站丰富一点内容，然后真的写了一篇长文呜呜呜</p>
+<p>然而我把它部署上来的时候发现很多<code>emoji</code>和占位符<code>Hexo</code>都默认不支持显示</p>
+<p>解决方式如下：</p>
+<ul>
+<li>首先将<code>Hexo</code>默认的<code>Markdown</code>渲染引擎<code>hexo-renderer-marked</code>替换成<code>hexo-renderer-markdown-it</code>，然后安装<code>markdown-it-emoji</code>,<code>markdown-it-task-lists</code>两个插件分别用于支持<code>GitHub emoji</code>和 <code>to do list</code></li>
+</ul>
+<pre><code class="language-shell">npm un hexo-renderer-marked --save
+npm i hexo-renderer-markdown-it --save
+npm install markdown-it-emoji --save
+npm install markdown-it-task-lists --save
+</code></pre>
+<ul>
+<li>
+<p>然后修改根目录下的<code>_config.yml</code></p>
+<pre><code class="language-yaml">## markdown 渲染引擎配置，默认是hexo-renderer-marked，这个插件渲染速度更快，且有新特性
+markdown:
+  render:
+    html: true
+    xhtmlOut: false
+    breaks: true
+    linkify: true
+    typographer: true
+    quotes: '“”‘’'
+  plugins:
+    - markdown-it-footnote
+    - markdown-it-sup
+    - markdown-it-sub
+    - markdown-it-abbr
+    - markdown-it-emoji
+    - markdown-it-task-lists
+  anchors:
+    level: 2
+    collisionSuffix: 'v'
+    permalink: false
+    permalinkClass: header-anchor
+    permalinkSymbol: ¶
+</code></pre>
+</li>
+<li>
+<p>最后重新部署即可</p>
+</li>
+</ul>
+<p>考虑到网站定位，大概率不会需要对<code>LaTeX</code>的支持，所以这一块先摆/doge</p>
 <h3 id="结语">结语</h3>
 <p>原定中秋完成作为在一起10天以及中秋的小礼物</p>
 <p>9月9日正好完工（日子选的还不错🥰），很好，很有精神！</p>
