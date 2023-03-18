@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0">
-        <title>浅浅记录一下开发历程 | Cjh &amp; Jqyの小窝</title>
+        <title>200days! | Cjh &amp; Jqyの小窝</title>
         <meta name="author" content="Deeeeex">
         <meta name="description" content="">
         <meta name="keywords" content="">
@@ -122,14 +122,14 @@
                         
 <div class="article">
     <div>
-        <h1>浅浅记录一下开发历程 </h1>
+        <h1>200days! </h1>
     </div>
     <div class="info">
         <span class="date">
             <span class="icon">
                 <svg class="fa-icon"><use xlink:href="#calendar-solid"></use></svg>
             </span>
-            2022/9/9
+            2023/3/18
         </span>
         
         
@@ -140,8 +140,8 @@
             
             <span class="tag">
                 
-                <a href="/tags/Tutorials/" style="color: #00a596">
-                    Tutorials
+                <a href="/tags/daily/" style="color: #ff7d73">
+                    daily
                 </a>
             </span>
             
@@ -149,97 +149,12 @@
         
     </div>
     <div class="content" v-pre>
-        <p>最开始是想记录一下纪念日，后来想把“已经在一起xx天”放在电脑壁纸上，但发现我也没法让江老师和我同时看到这个东西，索性做个网页，把值得记录的生活点滴放在这里，遂取名<code>cjh &amp; jqyの小窝</code>（什么三语怪名🤣）</p>
+        <p>“喜欢是欲占有 而爱是愿付出”</p>
+<img src="/images/200.jpg">
 <span id="more"></span>
-<p>之前看过一位<a target="_blank" rel="noopener" href="http://home.ustc.edu.cn/~admindeng/">好友</a>的博客用<code>Hexo</code>搭建，可以套用一些主题+DIY自己想做的东西，虽然是静态网站但是展示效果挺好。我这里选择的主题是<a target="_blank" rel="noopener" href="https://github.com/argvchs/hexo-theme-particlex">Hexo-Theme-ParticleX</a></p>
-<h3 id="主题与首页">主题与首页</h3>
-<p>至于主题使用方式也很简单，把个人信息什么的填写进去，首页倒计时的实现方式是用<code>timer</code>减去<code>theme.date.start</code>（这里的<code>theme.date.start</code>写的是<code>&quot;2022/08/31 00:58:09&quot;</code>，时间点非常严谨就是说）</p>
-<pre><code class="language-js">&lt;!--计时器js--&gt;
-      &lt;script&gt;
-        function timer() &#123;
-        window.setTimeout(&quot;timer()&quot;, 1000);
-        var start = new Date(&quot;&lt;%= theme.date.start %&gt;&quot;);
-        var t = new Date().getTime() - start;
-        var h = ~~(t / 1000 / 60 / 60 % 24);
-        if (h &lt; 10) &#123;h = &quot;0&quot; + h;&#125;
-        var m = ~~(t / 1000 / 60 % 60);
-        if (m &lt; 10) &#123; m = &quot;0&quot; + m;&#125;
-        var s = ~~(t / 1000 % 60);
-       if (s &lt; 10) &#123;s = &quot;0&quot; + s;&#125;
-        document.getElementById('d').innerHTML = ~~(t / 1000 / 60 / 60 / 24);
-       document.getElementById('h').innerHTML = h;
-       document.getElementById('m').innerHTML = m;
-       document.getElementById('s').innerHTML = s;&#125;
-        timer();
-      &lt;/script&gt; 
-&lt;!--END：计时器js--&gt;
-</code></pre>
-<h3 id="卡片">卡片</h3>
-<p>侧边的卡片本来是个人介绍页，强行将其改为两张图片，顺便把右边的<code>gif</code>水平翻转过来和左边的<code>gif</code>保持一下和谐🤩</p>
-<h3 id="鼠标及背景特效">鼠标及背景特效</h3>
-<p>鼠标的特效可以去仓库自取<a target="_blank" rel="noopener" href="https://github.com/diaryofus/diaryofus.github.io">diaryofus/diaryofus.github.io</a></p>
-<h3 id="图片排版">图片排版</h3>
-<p>考虑到后面发照片可能会凑九宫格，所以<code>Hexo</code>的图片排版貌似就成了个大问题，看了一些网上的解决方案，最终还是选择放在表格里，效果见下图</p>
-<table><tr>
-<td><img src="/images/profile_1.jpg" width="200" border="0/"></td>
-<td><img src="/images/profile_2.jpg" width="200" border="0/"></td>
-<td><img src="/images/彩虹1.jpg" width="200" border="0/"></td>
-</tr></table> 
-<h3 id="国内访问加速">国内访问加速</h3>
-<p>由于开始时部署在<code>Github Pages</code>上，不开梯子访问真的究极慢</p>
-<p>最开始尝试的是<code>Vercel</code></p>
-<p><a target="_blank" rel="noopener" href="https://diary-diaryofus.vercel.app/">https://diary-diaryofus.vercel.app/</a></p>
-<p><a target="_blank" rel="noopener" href="https://diary-jet.vercel.app/">https://diary-jet.vercel.app/</a></p>
-<p>后来发现这个是直接被墙掉了</p>
-<p>替换成<code>Netlify</code>成功解决国内访问太慢的问题</p>
-<p><a target="_blank" rel="noopener" href="https://diaryofus.netlify.app/">https://diaryofus.netlify.app/</a></p>
-<h3 id="Markdown渲染问题">Markdown渲染问题</h3>
-<p>感动哭了，因为之前提过一嘴或许江老师也可以为我们的网站丰富一点内容，然后真的写了一篇长文呜呜呜</p>
-<p>然而我把它部署上来的时候发现很多<code>emoji</code>和占位符<code>Hexo</code>都默认不支持显示</p>
-<p>解决方式如下：</p>
-<ul>
-<li>首先将<code>Hexo</code>默认的<code>Markdown</code>渲染引擎<code>hexo-renderer-marked</code>替换成<code>hexo-renderer-markdown-it</code>，然后安装<code>markdown-it-emoji</code>,<code>markdown-it-task-lists</code>两个插件分别用于支持<code>GitHub emoji</code>和 <code>to do list</code></li>
-</ul>
-<pre><code class="language-shell">npm un hexo-renderer-marked --save
-npm i hexo-renderer-markdown-it --save
-npm install markdown-it-emoji --save
-npm install markdown-it-task-lists --save
-</code></pre>
-<ul>
-<li>
-<p>然后修改根目录下的<code>_config.yml</code></p>
-<pre><code class="language-yaml">## markdown 渲染引擎配置，默认是hexo-renderer-marked，这个插件渲染速度更快，且有新特性
-markdown:
-  render:
-    html: true
-    xhtmlOut: false
-    breaks: true
-    linkify: true
-    typographer: true
-    quotes: '“”‘’'
-  plugins:
-    - markdown-it-footnote
-    - markdown-it-sup
-    - markdown-it-sub
-    - markdown-it-abbr
-    - markdown-it-emoji
-    - markdown-it-task-lists
-  anchors:
-    level: 2
-    collisionSuffix: 'v'
-    permalink: false
-    permalinkClass: header-anchor
-    permalinkSymbol: ¶
-</code></pre>
-</li>
-<li>
-<p>最后重新部署即可</p>
-</li>
-</ul>
-<p>考虑到网站定位，大概率不会需要对<code>LaTeX</code>的支持，所以这一块先摆/doge</p>
-<h3 id="结语">结语</h3>
-<p>原定中秋完成作为在一起10天以及中秋的小礼物</p>
-<p>9月9日正好完工（日子选的还不错🥰），很好，很有精神！</p>
+<p>200天来的比预想中快很多！</p>
+<p>不出意外的话，宝贝看到这段话的时候应该和陈老师一起住在古北水镇嘿嘿</p>
+<p>剩下的话，那就当面说（手动狗头</p>
 
     </div>
     
