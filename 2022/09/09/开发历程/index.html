@@ -140,7 +140,7 @@
             
             <span class="tag">
                 
-                <a href="/tags/Tutorials/" style="color: #03a9f4">
+                <a href="/tags/Tutorials/" style="color: #ffa2c4">
                     Tutorials
                 </a>
             </span>
@@ -181,9 +181,9 @@
 <h3 id="图片排版">图片排版</h3>
 <p>考虑到后面发照片可能会凑九宫格，所以<code>Hexo</code>的图片排版貌似就成了个大问题，看了一些网上的解决方案，最终还是选择放在表格里，效果见下图</p>
 <table><tr>
-<td><img src="https://cdn.jsdelivr.net/gh/diaryofus/diaryofus.github.io@master/images/profile_1.jpg" width="200" border="0/"></td>
-<td><img src="https://cdn.jsdelivr.net/gh/diaryofus/diaryofus.github.io@master/images/profile_2.jpg" width="200" border="0/"></td>
-<td><img src="https://cdn.jsdelivr.net/gh/diaryofus/diaryofus.github.io@master/images/彩虹1.jpg" width="200" border="0/"></td>
+<td><img src="source/images/left.gif" data-original="https://cdn.jsdelivr.net/gh/diaryofus/diaryofus.github.io@master/images/profile_1.jpg" width="200" border="0/"></td>
+<td><img src="source/images/left.gif" data-original="https://cdn.jsdelivr.net/gh/diaryofus/diaryofus.github.io@master/images/profile_2.jpg" width="200" border="0/"></td>
+<td><img src="source/images/left.gif" data-original="https://cdn.jsdelivr.net/gh/diaryofus/diaryofus.github.io@master/images/彩虹1.jpg" width="200" border="0/"></td>
 </tr></table> 
 <h3 id="国内访问加速">国内访问加速</h3>
 <p>由于开始时部署在<code>Github Pages</code>上，不开梯子访问真的究极慢</p>
@@ -240,6 +240,9 @@ markdown:
 <h3 id="结语">结语</h3>
 <p>原定中秋完成作为在一起10天以及中秋的小礼物</p>
 <p>9月9日正好完工（日子选的还不错🥰），很好，很有精神！</p>
+<h3 id="20230623-记录">20230623_记录</h3>
+<p>加入图片CDN<br>
+所有<code>/images/</code>替换成<code>https://cdn.jsdelivr.net/gh/diaryofus/diaryofus.github.io@master/images/</code></p>
 
     </div>
     
@@ -279,5 +282,18 @@ markdown:
         
         
 
-    </body>
+    
+        <style>
+            [bg-lazy] {
+                background-image: none !important;
+                background-color: #eee !important;
+            }
+        </style>
+        <script>
+            window.imageLazyLoadSetting = {
+                isSPA: false,
+                preloadRatio: 1,
+                processImages: null,
+            };
+        </script><script>window.addEventListener("load",function(){var t=/\.(gif|jpg|jpeg|tiff|png)$/i,r=/^data:image\/[a-z]+;base64,/;Array.prototype.slice.call(document.querySelectorAll("img[data-original]")).forEach(function(a){var e=a.parentNode;"A"===e.tagName&&(e.href.match(t)||e.href.match(r))&&(e.href=a.dataset.original)})});</script><script>!function(r){r.imageLazyLoadSetting.processImages=t;var e=r.imageLazyLoadSetting.isSPA,n=r.imageLazyLoadSetting.preloadRatio||1,c=a();function a(){var t=Array.prototype.slice.call(document.querySelectorAll("img[data-original]")),e=Array.prototype.slice.call(document.querySelectorAll("[bg-lazy]"));return t.concat(e)}function t(){e&&(c=a());for(var t,o=0;o<c.length;o++)0<=(t=(t=c[o]).getBoundingClientRect()).bottom&&0<=t.left&&t.top<=(r.innerHeight*n||document.documentElement.clientHeight*n)&&function(){var t,e,n,a,i=c[o];e=function(){c=c.filter(function(t){return i!==t}),r.imageLazyLoadSetting.onImageLoaded&&r.imageLazyLoadSetting.onImageLoaded(i)},(t=i).hasAttribute("bg-lazy")?(t.removeAttribute("bg-lazy"),e&&e()):(n=new Image,a=t.getAttribute("data-original"),n.onload=function(){t.src=a,t.removeAttribute("data-original"),e&&e()},t.src!==a&&(n.src=a))}()}function i(){clearTimeout(t.tId),t.tId=setTimeout(t,500)}t(),document.addEventListener("scroll",i),r.addEventListener("resize",i),r.addEventListener("orientationchange",i)}(this);</script></body>
 </html>
