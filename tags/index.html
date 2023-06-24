@@ -58,6 +58,11 @@
             <span>&ensp;tags</span>
         </a>
         
+        <a href="/">
+            <i class="fa-solid fa-gallery fa-fw"></i>
+            <span>&ensp;gallery</span>
+        </a>
+        
     </div>
     <div :class="'phone-menu ' + menu_show" id="phone-menu">
         <div class="curtain" @click="menu_show = !menu_show" v-show="menu_show"></div>
@@ -113,6 +118,15 @@
                 </div>
             </a>
             
+            <a href="/">
+                <div class="item">
+                    <div style="min-width: 20px; max-width: 50px; width: 10%">
+                        <i class="fa-solid fa-gallery fa-fw"></i>
+                    </div>
+                    <div style="min-width: 100px; max-width: 150%; width: 20%">gallery</div>
+                </div>
+            </a>
+            
         </div>
         </transition>
     </div>
@@ -126,7 +140,7 @@
         
         
         <span>
-            <a href="/tags/daily/" style="background: #03a9f4">
+            <a href="/tags/daily/" style="background: #00a596">
                 <span class="icon">
                     <svg class="fa-icon"><use xlink:href="#tags-solid"></use></svg>
                 </span>
@@ -146,7 +160,7 @@
         
         
         <span>
-            <a href="/tags/future/" style="background: #ffa2c4">
+            <a href="/tags/future/" style="background: #ff7d73">
                 <span class="icon">
                     <svg class="fa-icon"><use xlink:href="#tags-solid"></use></svg>
                 </span>
