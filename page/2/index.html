@@ -63,6 +63,11 @@
             <span>&ensp;gallery</span>
         </a>
         
+        <a href="/christmas">
+            <i class="fa-solid fa-christmas fa-fw"></i>
+            <span>&ensp;christmas</span>
+        </a>
+        
     </div>
     <div :class="'phone-menu ' + menu_show" id="phone-menu">
         <div class="curtain" @click="menu_show = !menu_show" v-show="menu_show"></div>
@@ -124,6 +129,15 @@
                         <i class="fa-solid fa-image fa-fw"></i>
                     </div>
                     <div style="min-width: 100px; max-width: 150%; width: 20%">gallery</div>
+                </div>
+            </a>
+            
+            <a href="/christmas">
+                <div class="item">
+                    <div style="min-width: 20px; max-width: 50px; width: 10%">
+                        <i class="fa-solid fa-christmas fa-fw"></i>
+                    </div>
+                    <div style="min-width: 100px; max-width: 150%; width: 20%">christmas</div>
                 </div>
             </a>
             
@@ -189,7 +203,7 @@
         
         <span class="tag">
             
-            <a href="/tags/future/" style="color: #ffa2c4">
+            <a href="/tags/future/" style="color: #00bcd4">
                 future
             </a>
         </span>
@@ -230,7 +244,7 @@
         
         <span class="tag">
             
-            <a href="/tags/Tutorials/" style="color: #ff7d73">
+            <a href="/tags/Tutorials/" style="color: #03a9f4">
                 Tutorials
             </a>
         </span>
@@ -268,7 +282,7 @@
         
         <span class="tag">
             
-            <a href="/tags/daily/" style="color: #00a596">
+            <a href="/tags/daily/" style="color: #00bcd4">
                 daily
             </a>
         </span>
